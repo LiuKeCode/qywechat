@@ -18,7 +18,7 @@ python -m pip install qywechat
 send text msg
 ```
 import qywechat
-key = "b8cc0ed7-6575-4658-ad63-1dc12fac9161"
+key = "b8cxxx"
 bot = qywechat.Bot(key)
 data = {
     	"msgtype": "text",
