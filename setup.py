@@ -14,7 +14,7 @@ import os
 from setuptools import setup, find_packages
 
 with open(
-    os.path.join(os.path.dirname(__file__), "requirements.txt"), "r"
+        os.path.join(os.path.dirname(__file__), "requirements.txt"), "r"
 ) as fh:
     requirements = fh.readlines()
 
@@ -22,7 +22,7 @@ NAME = "qywechat"
 DESCRIPTION = (
     "This is a msg-robot for qywechat."
 )
-AUTHOR = "PyFeishu"
+AUTHOR = "LiuKe"
 URL = "https://github.com/liukecode/qywechat"
 VERSION = None
 
@@ -46,13 +46,15 @@ setup(
     description=DESCRIPTION,
     long_description=about["long_description"],
     long_description_content_type="text/markdown",
-    AUTHOR=AUTHOR,
+    author=AUTHOR,
+    maintainer="Liuke",
     url=URL,
     keywords=["wechat", "qywechat", "weixin", "qyweixin", "wecom", "api", "bot", "robot"],
     install_requires=[req for req in requirements],
     packages=find_packages(exclude=("tests",)),
-    package_data = {'': ['*.yaml'],},
+    package_data={'': ['*.yaml'], },
     classifiers=[
+        "Development Status :: 5 - Production/Stable",
         "Intended Audience :: Developers",
         "Intended Audience :: End Users/Desktop",
         "Intended Audience :: Information Technology",
