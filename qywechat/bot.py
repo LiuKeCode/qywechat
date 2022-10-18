@@ -9,14 +9,14 @@ import base64
 import hashlib
 
 from requests import Request, Session
-from tenacity import retry, retry_if_not_exception_type, stop_after_attempt,wait_fixed
+from tenacity import retry, retry_if_not_exception_type, stop_after_attempt, wait_fixed
 
 from .errors import InvalidKeyError, RequestError
 from .log import logger
 
 
 class QyWechatBot:
-    def __init__(self, 
+    def __init__(self,
                  key,
                  base_url='https://qyapi.weixin.qq.com'):
         self.key = key
@@ -64,7 +64,7 @@ class QyWechatBot:
             'Content-Type': 'application/json; charset=utf-8',
         }
         params = {"key": self.key}
-        return self.post('/cgi-bin/webhook/send', headers=headers,params=params,json=msg)
+        return self.post('/cgi-bin/webhook/send', headers=headers, params=params, json=msg)
 
     def img_msg(self, img):
         headers = {
@@ -82,10 +82,7 @@ class QyWechatBot:
             "msgtype": "image",
             "image": {
                 "base64": b64_str,
-		        "md5": md5_str
-                }
+                "md5": md5_str
+            }
         }
-        return self.post('/cgi-bin/webhook/send', headers=headers,params=params,json=payload)
-
-    
-    
+        return self.post('/cgi-bin/webhook/send', headers=headers, params=params, json=payload)
